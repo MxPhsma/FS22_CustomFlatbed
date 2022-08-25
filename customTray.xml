@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="UniversalBed">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved. Edit: Karl911</annotation>
+    <storeData>
+        <name>
+            <en>Custom Tray</en>				
+		</name>			
+        <functions>
+            <function>$l10n_function_tray</function>			
+        </functions>
+        <image>customTray.dds</image>
+        <price>10000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>customTray.i3d</filename>
+        <size width="3" length="7.5" lengthOffset="0.25" height="3" />
+        
+		<components maxMass="12500">
+            <component centerOfMass="0.00 0.50 -0.00" solverIterationCount="30" mass="3500"/>
+        </components>
+       
+        <schemaOverlay attacherJointPosition="-1 -0.5" name="IMPLEMENT" />
+		<mapHotspot type="TRAILER"/>        
+    </base>	
+	
+    <attachable>
+        <inputAttacherJoints>
+			<inputAttacherJoint node="attacherJointUniversalBed" jointType="UniversalBed" />
+            <inputAttacherJoint node="attacherJointX2" jointType="82JointTipperX2"/>
+            <inputAttacherJoint node="attacherJointZil" jointType="korba" />
+            <inputAttacherJoint node="attacherJointGaZ" jointType="master" />
+            <inputAttacherJoint node="attacherJointAU" jointType="frontloader" />
+            <!-- <inputAttacherJoint node="attacherJointUnitrac" jointType="semitrailer" /> -->
+            <inputAttacherJoint node="attacherJointF600" jointType="CarroceriaToco" />
+            <inputAttacherJoint node="attacherJointHpn" jointType="toco" />
+		    <inputAttacherJoint node="attacherJointLiaz" jointType="semitrailer"/>
+		    <inputAttacherJoint node="attacherJointSemiTrailer" jointType="semitrailer" upperRotationOffset="0" lowerRotLimitScale="0 0 0" />
+        </inputAttacherJoints>
+        <support animationName="moveSupport" delayedOnAttach="false" />
+    </attachable>
+
+    <attacherJoints>
+        <attacherJointConfigurations title="Rear Fascia">
+            <attacherJointConfiguration name="None" price="0">
+                <objectChange node="bedBackNoFascia" visibilityActive="true"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="false"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>		
+                <objectChange node="rearLights" visibilityActive="false"/>
+                <objectChange node="connectionHoses" visibilityActive="false"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Rear Lights" price="350">
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="true"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="false"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>		
+                <objectChange node="rearLights" visibilityActive="true"/>
+                <objectChange node="connectionHoses" visibilityActive="false"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Half Fascia" price="500">
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="true"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>		
+                <objectChange node="rearLights" visibilityActive="true"/>
+                <objectChange node="connectionHoses" visibilityActive="false"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Half Fascia + Attacher" price="1095">
+                <attacherJoint node="trailerAttacherJointBack" jointType="trailer" lowerRotLimit="10 65 65" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 -.5" rotation="0" invertX="false" />
+                    <attachSound template="TRUCK_ATTACH_01" linkNode="0>" />			
+                </attacherJoint>
+
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="true"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="true"/>
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>			
+                <objectChange node="rearLights" visibilityActive="true"/>	
+                <objectChange node="connectionHoses" visibilityActive="true"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Half Fascia + Attacher Low" price="1095">
+                <attacherJoint node="trailerAttacherJointBackLow" jointType="trailerLow" lowerRotLimit="10 65 65" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 -.5" rotation="0" invertX="false" />
+                    <attachSound template="TRUCK_ATTACH_01" linkNode="0>" />	
+                    
+                    <objectChange node="trailerAttacherBackLowCover" visibilityActive="false" visibilityInactive="true" />			
+                </attacherJoint>
+
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="true"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>
+                <objectChange node="trailerAttacherBackLow" visibilityActive="true"/>			
+                <objectChange node="rearLights" visibilityActive="true"/>	
+                <objectChange node="connectionHoses" visibilityActive="true"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Full Fascia" price="600">
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="false"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="true"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>		
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>	
+                <objectChange node="rearLights" visibilityActive="true"/>
+                <objectChange node="connectionHoses" visibilityActive="false"/>	
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Full Fascia + Attacher" price="1195">
+                <attacherJoint node="trailerAttacherJointBack" jointType="trailer" lowerRotLimit="10 65 65" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 -.5" rotation="0" invertX="false" />
+                    <attachSound template="TRUCK_ATTACH_01" linkNode="0>" />
+                </attacherJoint>
+
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="false"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="true"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="true"/>	
+                <objectChange node="trailerAttacherBackLow" visibilityActive="false"/>		
+                <objectChange node="rearLights" visibilityActive="true"/>		
+                <objectChange node="connectionHoses" visibilityActive="true"/>		
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="Full Fascia + Attacher Low" price="1195">
+                <attacherJoint node="trailerAttacherJointBackLow" jointType="trailerLow" lowerRotLimit="10 65 65" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 -.5" rotation="0" invertX="false" />
+                    <attachSound template="TRUCK_ATTACH_01" linkNode="0>" />
+                    
+                    <objectChange node="trailerAttacherBackLowCover" visibilityActive="false" visibilityInactive="true" />	
+                </attacherJoint>
+
+                <objectChange node="bedBackNoFascia" visibilityActive="false"/>
+                <objectChange node="bedBackLights" visibilityActive="false"/>
+                <objectChange node="bedBackHalfFascia" visibilityActive="false"/>
+                <objectChange node="bedBackFullFascia" visibilityActive="true"/>	
+                <objectChange node="trailerAttacherBack" visibilityActive="false"/>	
+                <objectChange node="trailerAttacherBackLow" visibilityActive="true"/>		
+                <objectChange node="rearLights" visibilityActive="true"/>	
+                <objectChange node="connectionHoses" visibilityActive="true"/>			
+            </attacherJointConfiguration>
+        </attacherJointConfigurations>
+    </attacherJoints>
+
+    <universalAutoLoad>
+		<vehicleConfigurations>
+			<vehicleConfiguration selectedConfigs="1">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="3"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="2">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="3.5"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="3">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="4"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="4">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="4.5"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="5">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="5"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="6">
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="5.5"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+			<vehicleConfiguration selectedConfigs="7">
+				<loadingArea offset="0.000 1.55 -0.10" width="2.65" height="2.5" baleHeight="2.8" length="6.1"/>
+				<options enableSideLoading="true" enableRearLoading="true"/>
+			</vehicleConfiguration>
+		</vehicleConfigurations>
+	</universalAutoLoad>
+
+    <configurationSets>
+        <configurationSet name="3m">
+            <configuration name="design" index="1"/>
+            <configuration name="tensionBelts" index="1"/>
+        </configurationSet>
+        <configurationSet name="3.5m">
+            <configuration name="design" index="2"/>
+            <configuration name="tensionBelts" index="2"/>
+        </configurationSet>
+        <configurationSet name="4m">
+            <configuration name="design" index="3"/>
+            <configuration name="tensionBelts" index="2"/>
+        </configurationSet>
+        <configurationSet name="4.5m">
+            <configuration name="design" index="4"/>
+            <configuration name="tensionBelts" index="2"/>
+        </configurationSet>
+        <configurationSet name="5m">
+            <configuration name="design" index="5"/>
+            <configuration name="tensionBelts" index="3"/>
+        </configurationSet>
+        <configurationSet name="5.5m">
+            <configuration name="design" index="6"/>
+            <configuration name="tensionBelts" index="3"/>
+        </configurationSet>
+        <configurationSet name="6m">
+            <configuration name="design" index="7"/>
+            <configuration name="tensionBelts" index="3"/>
+        </configurationSet>
+    </configurationSets>
+
+    <designConfigurations preLoad="true">
+        <designConfiguration name="3 Meters">
+            <objectChange node="bedMiddle_1m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 1"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -1"/>
+        </designConfiguration>
+        <designConfiguration name="3.5 Meters" price="500">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 1.25"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -1.25"/>
+        </designConfiguration>
+        <designConfiguration name="4 Meters" price="1000">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 1.5"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -1.5"/>
+        </designConfiguration>
+        <designConfiguration name="4.5 Meters" price="1500">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 1.75"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -1.75"/>
+        </designConfiguration>
+        <designConfiguration name="5 Meters" price="2000">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 2"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -2"/>
+        </designConfiguration>
+        <designConfiguration name="5.5 Meters" price="2500">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="true"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="false"/>
+            <objectChange node="bedFront" translationActive="0 1.25 2.25"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -2.25"/>
+        </designConfiguration>
+        <designConfiguration name="6 Meters" price="3000">
+            <objectChange node="bedMiddle_1m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_1.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_2.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_3.5m" visibilityActive="false"/>
+            <objectChange node="bedMiddle_4m" visibilityActive="true"/>
+            <objectChange node="bedFront" translationActive="0 1.25 2.5"/>
+            <objectChange node="bedBack" translationActive="0 1.25 -2.5"/>
+        </designConfiguration>
+    </designConfigurations>
+
+    <design2Configurations title="Headboard">
+		<design2Configuration name="None" price="0">	
+			<objectChange node="headboardLow" visibilityActive="false"/>
+            <objectChange node="headboard1200" visibilityActive="false"/>
+            <objectChange node="headboard1500" visibilityActive="false"/>
+            <objectChange node="headboard1800" visibilityActive="false"/>
+        </design2Configuration>
+		<design2Configuration name="Low" price="250">	
+			<objectChange node="headboardLow" visibilityActive="true"/>
+            <objectChange node="headboard1200" visibilityActive="false"/>
+            <objectChange node="headboard1500" visibilityActive="false"/>
+            <objectChange node="headboard1800" visibilityActive="false"/>
+        </design2Configuration>
+		<design2Configuration name="1.2m" price="350">	
+			<objectChange node="headboardLow" visibilityActive="false"/>
+            <objectChange node="headboard1200" visibilityActive="true"/>
+            <objectChange node="headboard1500" visibilityActive="false"/>
+            <objectChange node="headboard1800" visibilityActive="false"/>
+        </design2Configuration>
+		<design2Configuration name="1.5m" price="450" isDefault="true">	
+			<objectChange node="headboardLow" visibilityActive="false"/>
+            <objectChange node="headboard1200" visibilityActive="false"/>
+            <objectChange node="headboard1500" visibilityActive="true"/>
+            <objectChange node="headboard1800" visibilityActive="false"/>
+        </design2Configuration>
+		<design2Configuration name="1.8m" price="550">	
+			<objectChange node="headboardLow" visibilityActive="false"/>
+            <objectChange node="headboard1200" visibilityActive="false"/>
+            <objectChange node="headboard1500" visibilityActive="false"/>
+            <objectChange node="headboard1800" visibilityActive="true"/>
+        </design2Configuration>
+    </design2Configurations>
+	
+    <animations>
+        <animation name="moveSupport">
+            <part node="supportsFront" startTime="0.00" endTime="0.01" visibility="false"/>
+            <part node="supportsBack" startTime="0.00" endTime="0.01" visibility="false"/>
+            <part node="supportsFront" startTime="0.01" endTime="0.60" visibility="true"/>
+            <part node="supportsBack" startTime="0.01" endTime="0.60" visibility="true"/>
+            <part node="supportFrontLeft" startTime="0.00" endTime="0.10" startTrans="0.38 0 0" endTrans="1.7 0 0"/>
+            <part node="supportFrontRight" startTime="0.00" endTime="0.10" startTrans="-0.38 0 0" endTrans="-1.7 0 0"/>
+            <part node="supportBackLeft" startTime="0.00" endTime="0.10" startTrans="0.38 0 0" endTrans="1.7 0 0"/>
+            <part node="supportBackRight" startTime="0.00" endTime="0.10" startTrans="-0.38 0 0" endTrans="-1.7 0 0"/>
+            <part node="supportFrontLeftFoot" startTime="0.10" endTime="0.11" startTrans="0.0 1.352 -0.08" endTrans="0.0 1.352 0"/>
+            <part node="supportFrontRightFoot" startTime="0.10" endTime="0.11" startTrans="0.0 1.352 -0.08" endTrans="0.0 1.352 0"/>
+            <part node="supportBackLeftFoot" startTime="0.10" endTime="0.11" startTrans="0.0 1.352 0.08" endTrans="0.0 1.352 0"/>	
+            <part node="supportBackRightFoot" startTime="0.10" endTime="0.11" startTrans="0.0 1.352 0.08" endTrans="0.0 1.352 0"/>	
+            <part node="supportFrontLeft" startTime="0.11" endTime="0.30" startRot="90.0 0.00 0.00"  endRot="0 0 0"/>
+            <part node="supportFrontRight" startTime="0.11" endTime="0.30" startRot="-90.0 180.00 0.00" endRot="0 180 0"/>
+            <part node="supportBackLeft" startTime="0.11" endTime="0.30" startRot="-90.0 0.00 0.00" endRot="0 0 0"/>
+            <part node="supportBackRight" startTime="0.11" endTime="0.30" startRot="90.0 180.00 0.00"  endRot="0 180 0"/>
+            <part node="supportFrontLeftInnerLeg" startTime="0.31" endTime="0.60" startTrans="0 -0.517 0.00" endTrans="0 -1.053 0"/>
+            <part node="supportFrontRightInnerLeg" startTime="0.31" endTime="0.60" startTrans="0 -0.517 0.00" endTrans="0 -1.053 0"/>
+            <part node="supportBackLeftInnerLeg" startTime="0.31" endTime="0.60" startTrans="0 -0.517 0.00" endTrans="0 -1.053 0"/>
+            <part node="supportBackRightInnerLeg" startTime="0.31" endTime="0.60" startTrans="0 -0.517 0.00" endTrans="0 -1.053 0"/>
+        </animation>	
+    </animations>
+
+    <tensionBelts>
+        <tensionBeltsConfigurations>
+            <tensionBeltsConfiguration name="Short Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
+                        <intersectionNode node="tensionBelt-1Intersection1"/>
+                        <intersectionNode node="tensionBelt-1Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="Medium Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
+                        <intersectionNode node="tensionBelt-1Intersection1"/>
+                        <intersectionNode node="tensionBelt-1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-2Start" endNode="tensionBelt-2End" >
+                        <intersectionNode node="tensionBelt-2Intersection1"/>
+                        <intersectionNode node="tensionBelt-2Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="Long Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
+                        <intersectionNode node="tensionBelt-1Intersection1"/>
+                        <intersectionNode node="tensionBelt-1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-2Start" endNode="tensionBelt-2End" >
+                        <intersectionNode node="tensionBelt-2Intersection1"/>
+                        <intersectionNode node="tensionBelt-2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt-3Start" endNode="tensionBelt-3End" >
+                        <intersectionNode node="tensionBelt-3Intersection1"/>
+                        <intersectionNode node="tensionBelt-3Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+        </tensionBeltsConfigurations>
+    </tensionBelts>
+
+    <baseMaterial>
+        <material name="Bed_Material" baseNode="headboard1800">
+            <shaderParameter name="colorMat0" value="SHARED_BLACK2"/>
+        </material>
+    </baseMaterial>
+
+    <foldable>
+        <foldingConfigurations title="Semi Attacher Adjustments">
+            <foldingConfiguration name="No">
+            </foldingConfiguration>
+            <foldingConfiguration name="Yes">
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <cylindered loadMovingToolStatesAfterFolding="true">
+		<movingTools>
+			<movingTool allowSaving="true" node="attacherJointSemiTrailerTranslateZ" foldingConfigurationIndex="2">
+				<controls axis="ADJUST_BED_POSITION" speedFactor="0.8"/>
+				<inputAttacherJoint value="true" />
+				<translation transSpeed=".5" transAcceleration="1" transMax="0.5" transMin="-3" translationAxis="3" />
+			</movingTool>
+			<movingTool allowSaving="true" node="attacherJointSemiTrailerTranslateY" foldingConfigurationIndex="2">
+				<controls axis="ADJUST_BED_HEIGHT" speedFactor="0.8"/>
+				<inputAttacherJoint value="true" />
+				<translation transSpeed=".5" transAcceleration="1" transMax="0.5" transMin="-0.5" translationAxis="2" />
+			</movingTool>
+		</movingTools>
+    </cylindered>
+
+    <lights>	
+        <sharedLight linkNode="rearLightLeftBlinker" filename="$data/shared/assets/lights/lizard/rearLight22Orange_left.xml" />
+        <sharedLight linkNode="rearLightLeftBrake1" filename="$data/shared/assets/lights/lizard/rearLight22Red.xml" />
+        <sharedLight linkNode="rearLightLeftBrake2" filename="$data/shared/assets/lights/lizard/rearLight22Red.xml" />
+        <sharedLight linkNode="rearLightLeftReverse" filename="$data/shared/assets/lights/lizard/rearLight22White.xml" />
+
+        <sharedLight linkNode="rearLightRightBlinker" filename="$data/shared/assets/lights/lizard/rearLight22Orange_right.xml" />
+        <sharedLight linkNode="rearLightRightBrake1" filename="$data/shared/assets/lights/lizard/rearLight22Red.xml" />
+        <sharedLight linkNode="rearLightRightBrake2" filename="$data/shared/assets/lights/lizard/rearLight22Red.xml" />
+        <sharedLight linkNode="rearLightRightReverse" filename="$data/shared/assets/lights/lizard/rearLight22White.xml" />
+    </lights>
+
+    <connectionHoses>
+        <!-- <target attacherJointIndices="1 2" type="hydraulicIn" node="hydraulic02_in"/>
+        <target attacherJointIndices="1 2" type="hydraulicOut" node="hydraulic02_out"/>
+        <target attacherJointIndices="1 2" type="hydraulicIn" node="hydraulic03_in"/>
+        <target attacherJointIndices="1 2" type="hydraulicOut" node="hydraulic03_out"/>
+        <target attacherJointIndices="1 2" type="electric" node="backElectric" socket="electric"/>
+        <target attacherJointIndices="1 2" type="airDoubleRed" node="airDoubleStorage"/>
+        <target attacherJointIndices="1 2" type="airDoubleYellow" node="airDoubleControl"/> -->
+
+        
+        <target type="electric" socket="electric" node="electricConnection" attacherJointIndices="1 2"/>
+        <target type="hydraulicIn" socket="hydraulic02" node="hydraulic1Connection" socketColor="0 0 1" attacherJointIndices="1 2"/>
+        <!-- <target type="hydraulicOut" socket="hydraulic02" node="hydraulic2Connection" attacherJointIndices="1 2"/>
+        <target type="hydraulicIn" socket="hydraulic02" node="hydraulic3Connection" attacherJointIndices="1 2"/>
+        <target type="hydraulicOut" socket="hydraulic02" node="hydraulic4Connection" attacherJointIndices="1 2"/> -->
+        <target type="airDoubleRed" socket="air_red" node="air1Connection" attacherJointIndices="1 2"/>
+        <target type="airDoubleYellow" socket="air_yellow" node="air2Connection" attacherJointIndices="1 2"/>
+    </connectionHoses>
+
+    <baseMaterialConfigurations price="0" useDefaultColors="true" defaultColorIndex="0">
+		<baseMaterialConfiguration name="Faded White" color="0.58 0.58 0.58" material="6" price="0"/>
+		<baseMaterialConfiguration name="Chrome" color="0.855 0.855 0.955" material="2" />
+		<baseMaterialConfiguration name="Aluminium" color="0.65 0.65 0.75" material="3" />
+		<baseMaterialConfiguration name="Stainless" color="1 1 1" material="8" />
+		<baseMaterialConfiguration name="Dark Steel" color="0.35 0.35 0.40" material="8" />
+		<baseMaterialConfiguration name="Black Gloss" color="0.02 0.02 0.02" material="40" />			
+    	<baseMaterialConfiguration name="Army Green" color="0.035 0.035 0.015" material="6" />		
+    	<baseMaterialConfiguration name="Sand" color="0.772 0.687 0.319" material="6" />	
+		<baseMaterialConfiguration name="Bronze Fire" color="0.153 0.029 0.01" material="27" />
+		<material name="Bed_Material" shaderParameter="colorMat0" />
+	</baseMaterialConfigurations>
+
+    <washable dirtDuration="60" washDuration="1" workMultiplier="4"/>
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>	
+	
+    <ai>
+        <needsLowering value="false"/>	
+    </ai>		
+
+    <i3dMappings>
+        <i3dMapping id="mainComponent" node="0>"/>
+        <i3dMapping id="supportsFront" node="0>0|0"/>
+        <i3dMapping id="supportFrontLeft" node="0>0|0|0"/>
+        <i3dMapping id="supportFrontLeftInnerLeg" node="0>0|0|0|0"/>
+        <i3dMapping id="supportFrontLeftFoot" node="0>0|0|0|0|0"/>	
+        <i3dMapping id="supportFrontRight" node="0>0|0|1"/>
+        <i3dMapping id="supportFrontRightInnerLeg" node="0>0|0|1|0"/>
+        <i3dMapping id="supportFrontRightFoot" node="0>0|0|1|0|0"/>	
+        <i3dMapping id="supportsBack" node="0>1|0"/>
+        <i3dMapping id="supportBackLeft" node="0>1|0|0"/>
+        <i3dMapping id="supportBackLeftInnerLeg" node="0>1|0|0|0"/>
+        <i3dMapping id="supportBackLeftFoot" node="0>1|0|0|0|0"/>	
+        <i3dMapping id="supportBackRight" node="0>1|0|1"/>
+        <i3dMapping id="supportBackRightInnerLeg" node="0>1|0|1|0"/>
+        <i3dMapping id="supportBackRightFoot" node="0>1|0|1|0|0"/>	
+        <i3dMapping id="attacherJointUniversalBed" node="0>0|1|0"/>
+        <i3dMapping id="attacherJointX2" node="0>0|1|1"/>
+        <i3dMapping id="attacherJointZil" node="0>0|1|2"/>
+        <i3dMapping id="attacherJointGaZ" node="0>0|1|3"/>
+        <i3dMapping id="attacherJointAU" node="0>0|1|4"/>
+        <i3dMapping id="attacherJointUnitrac" node="0>0|1|5"/>
+        <i3dMapping id="attacherJointF600" node="0>0|1|6"/>
+        <i3dMapping id="attacherJointHpn" node="0>0|1|7"/>
+        <i3dMapping id="attacherJointLiaz" node="0>0|1|8"/>
+        <i3dMapping id="attacherJointSemiTrailerTranslateZ" node="0>0|1|9"/>
+        <i3dMapping id="attacherJointSemiTrailerTranslateY" node="0>0|1|9|0"/>
+        <i3dMapping id="attacherJointSemiTrailer" node="0>0|1|9|0|0"/>
+        <i3dMapping id="trailerAttacherJointBack" node="0>1|5|0|0"/>
+        <i3dMapping id="trailerAttacherJointBackLow" node="0>1|5|1|0"/>
+        <i3dMapping id="bedFront" node="0>0"/>
+        <i3dMapping id="headboard1200" node="0>0|2|0"/>
+        <i3dMapping id="headboard1500" node="0>0|2|1"/>
+        <i3dMapping id="headboard1800" node="0>0|2|2"/>
+        <i3dMapping id="headboardLow" node="0>0|2|3"/>
+        <i3dMapping id="bedBack" node="0>1"/>
+        <i3dMapping id="bedBackNoFascia" node="0>1|1"/>
+        <i3dMapping id="bedBackLights" node="0>1|2"/>
+        <i3dMapping id="bedBackHalfFascia" node="0>1|3"/>
+        <i3dMapping id="bedBackFullFascia" node="0>1|4"/>
+        <i3dMapping id="trailerAttacherBack" node="0>1|5|0"/>
+        <i3dMapping id="trailerAttacherBackLow" node="0>1|5|1"/>
+        <i3dMapping id="trailerAttacherBackLowCover" node="0>1|5|1|1"/>
+        <i3dMapping id="rearLights" node="0>1|5|2"/>
+        <i3dMapping id="rearLightLeftBlinker" node="0>1|5|2|0|0"/>
+        <i3dMapping id="rearLightLeftBrake1" node="0>1|5|2|0|1"/>
+        <i3dMapping id="rearLightLeftBrake2" node="0>1|5|2|0|2"/>
+        <i3dMapping id="rearLightLeftReverse" node="0>1|5|2|0|3"/>
+        <i3dMapping id="rearLightRightBlinker" node="0>1|5|2|1|0"/>
+        <i3dMapping id="rearLightRightBrake1" node="0>1|5|2|1|1"/>
+        <i3dMapping id="rearLightRightBrake2" node="0>1|5|2|1|2"/>
+        <i3dMapping id="rearLightRightReverse" node="0>1|5|2|1|3"/>
+        <i3dMapping id="connectionHoses" node="0>1|5|3"/>
+        <i3dMapping id="electricConnection" node="0>1|5|3|0"/>
+        <i3dMapping id="hydraulic1Connection" node="0>1|5|3|1"/>
+        <i3dMapping id="hydraulic2Connection" node="0>1|5|3|2"/>
+        <i3dMapping id="hydraulic3Connection" node="0>1|5|3|3"/>
+        <i3dMapping id="hydraulic4Connection" node="0>1|5|3|4"/>
+        <i3dMapping id="air1Connection" node="0>1|5|3|5"/>
+        <i3dMapping id="air2Connection" node="0>1|5|3|6"/>
+        <i3dMapping id="bedMiddle_1m" node="0>2|0"/>
+        <i3dMapping id="col_bedMiddle_1m" node="0>2|0|1"/>
+        <i3dMapping id="bedMiddle_1.5m" node="0>2|1"/>
+        <i3dMapping id="col_bedMiddle_1.5m" node="0>2|1|1"/>
+        <i3dMapping id="bedMiddle_2m" node="0>2|2"/>
+        <i3dMapping id="col_bedMiddle_2m" node="0>2|2|1"/>
+        <i3dMapping id="bedMiddle_2.5m" node="0>2|3"/>
+        <i3dMapping id="col_bedMiddle_2.5m" node="0>2|3|1"/>
+        <i3dMapping id="bedMiddle_3m" node="0>2|4"/>
+        <i3dMapping id="col_bedMiddle_3m" node="0>2|4|1"/>
+        <i3dMapping id="bedMiddle_3.5m" node="0>2|5"/>
+        <i3dMapping id="col_bedMiddle_3.5m" node="0>2|5|1"/>
+        <i3dMapping id="bedMiddle_4m" node="0>2|6"/>
+        <i3dMapping id="col_bedMiddle_4m" node="0>2|6|1"/>
+        <i3dMapping id="tensionBelts" node="0>3"/>
+        <i3dMapping id="beltActivationTrigger" node="0>3|0"/>
+        <i3dMapping id="tensionBelt0Start" node="0>3|1"/>
+        <i3dMapping id="tensionBelt0Intersection1" node="0>3|1|0"/>
+        <i3dMapping id="tensionBelt0Intersection2" node="0>3|1|1"/>
+        <i3dMapping id="tensionBelt0End" node="0>3|1|2"/>
+        <i3dMapping id="tensionBelt1Start" node="0>3|2"/>
+        <i3dMapping id="tensionBelt1Intersection1" node="0>3|2|0"/>
+        <i3dMapping id="tensionBelt1Intersection2" node="0>3|2|1"/>
+        <i3dMapping id="tensionBelt1End" node="0>3|2|2"/>
+        <i3dMapping id="tensionBelt-1Start" node="0>3|3"/>
+        <i3dMapping id="tensionBelt-1Intersection1" node="0>3|3|0"/>
+        <i3dMapping id="tensionBelt-1Intersection2" node="0>3|3|1"/>
+        <i3dMapping id="tensionBelt-1End" node="0>3|3|2"/>
+        <i3dMapping id="tensionBelt2Start" node="0>3|4"/>
+        <i3dMapping id="tensionBelt2Intersection1" node="0>3|4|0"/>
+        <i3dMapping id="tensionBelt2Intersection2" node="0>3|4|1"/>
+        <i3dMapping id="tensionBelt2End" node="0>3|4|2"/>
+        <i3dMapping id="tensionBelt-2Start" node="0>3|5"/>
+        <i3dMapping id="tensionBelt-2Intersection1" node="0>3|5|0"/>
+        <i3dMapping id="tensionBelt-2Intersection2" node="0>3|5|1"/>
+        <i3dMapping id="tensionBelt-2End" node="0>3|5|2"/>
+        <i3dMapping id="tensionBelt3Start" node="0>3|6"/>
+        <i3dMapping id="tensionBelt3Intersection1" node="0>3|6|0"/>
+        <i3dMapping id="tensionBelt3Intersection2" node="0>3|6|1"/>
+        <i3dMapping id="tensionBelt3End" node="0>3|6|2"/>
+        <i3dMapping id="tensionBelt-3Start" node="0>3|7"/>
+        <i3dMapping id="tensionBelt-3Intersection1" node="0>3|7|0"/>
+        <i3dMapping id="tensionBelt-3Intersection2" node="0>3|7|1"/>
+        <i3dMapping id="tensionBelt-3End" node="0>3|7|2"/>
+    </i3dMappings>		
+
+</vehicle>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="67">
+    <author>Phsma Modding</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Lizard Custom Flatbed</en>
+    </title>
+
+    <description>
+        <en><![CDATA[
+        A customisable Australian styled flatbed for adding to almost any trucks.
+        
+        Change this flatbed to suit your needs and attach it to your favorite truck for the hard days work ahead. It is compatible with all swapbodies on the modhub currently, plus any semi trailer.
+
+        Configurations:
+            - Base color
+            - Length
+            - Headboard
+            - Rear fascia/attachers
+            - Additional positioning for semi trailers.
+        ]]></en>
+    </description>
+
+    <jointTypes>
+        <jointType name="UniversalBed"/>
+    </jointTypes>
+
+    <iconFilename>modIcon.png</iconFilename>
+
+    <multiplayer supported="true"/>
+
+    <l10n filenamePrefix="translations/l10n"/>
+
+    <storeItems>
+        <storeItem xmlFilename="customTray.xml"/>
+    </storeItems>
+
+    <vehicleTypes>
+        <type name="UniversalBed" parent="trailer" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua"/>
+    </vehicleTypes>
+
+    <actions>
+        <action name="ADJUST_BED_POSITION" category="VEHICLE" axisType="HALF"/>
+        <action name="ADJUST_BED_HEIGHT" category="VEHICLE" axisType="HALF"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="ADJUST_BED_POSITION">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_k" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_m" axisComponent="-" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_RIGHT AXIS_X-" axisComponent="-" neutralInput="0" index="3"/>
+            <binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_RIGHT AXIS_X+" axisComponent="+" neutralInput="0" index="3"/>
+            <binding device="0_XINPUT_GAMEPAD" input="BUTTON_6 AXIS_1+" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="0_XINPUT_GAMEPAD" input="BUTTON_6 AXIS_1-" axisComponent="-" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="ADJUST_BED_HEIGHT">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_j" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_n" axisComponent="-" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_RIGHT AXIS_Y+" axisComponent="+" neutralInput="0" index="3"/>
+            <binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_RIGHT AXIS_Y-" axisComponent="-" neutralInput="0" index="3"/>
+            <binding device="0_XINPUT_GAMEPAD" input="BUTTON_6 AXIS_2+" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="0_XINPUT_GAMEPAD" input="BUTTON_6 AXIS_2-" axisComponent="-" neutralInput="0" index="1"/>
+        </actionBinding>
+    </inputBinding>
+</modDesc>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+      <text name="input_ADJUST_BED_POSITION" text="Adjust bed position"/>
+      <text name="input_ADJUST_BED_HEIGHT" text="Adjust bed height"/>
+
+		<!-- Functions -->
+		<text name="function_tray" text="This tray can be used to transport pallets or equipment"/>
+    </texts>
+</l10n>
