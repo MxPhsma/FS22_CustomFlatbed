@@ -156,31 +156,31 @@
     <universalAutoLoad>
 		<vehicleConfigurations>
 			<vehicleConfiguration selectedConfigs="1">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="3"/>
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.2" baleHeight="2.4" length="3"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="2">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="3.5"/>
+				<loadingArea offset="0.000 1.55 -0.15" width="2.65" height="2.2" baleHeight="2.4" length="3.65"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="3">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="1.8" baleHeight="2" length="4"/>
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.2" baleHeight="2.4" length="4"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="4">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="4.5"/>
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.2" baleHeight="2.4" length="4.5"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="5">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="5"/>
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.2" baleHeight="2.4" length="5"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="6">
-				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.5" baleHeight="2.8" length="5.5"/>
+				<loadingArea offset="0.000 1.55 -0.05" width="2.65" height="2.2" baleHeight="2.4" length="5.5"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 			<vehicleConfiguration selectedConfigs="7">
-				<loadingArea offset="0.000 1.55 -0.10" width="2.65" height="2.5" baleHeight="2.8" length="6.1"/>
+				<loadingArea offset="0.000 1.55 -0.15" width="2.65" height="2.2" baleHeight="2.4" length="6.1"/>
 				<options enableSideLoading="true" enableRearLoading="true"/>
 			</vehicleConfiguration>
 		</vehicleConfigurations>
@@ -197,23 +197,23 @@
         </configurationSet>
         <configurationSet name="4m">
             <configuration name="design" index="3"/>
-            <configuration name="tensionBelts" index="2"/>
+            <configuration name="tensionBelts" index="3"/>
         </configurationSet>
         <configurationSet name="4.5m">
             <configuration name="design" index="4"/>
-            <configuration name="tensionBelts" index="2"/>
+            <configuration name="tensionBelts" index="4"/>
         </configurationSet>
         <configurationSet name="5m">
             <configuration name="design" index="5"/>
-            <configuration name="tensionBelts" index="3"/>
+            <configuration name="tensionBelts" index="5"/>
         </configurationSet>
         <configurationSet name="5.5m">
             <configuration name="design" index="6"/>
-            <configuration name="tensionBelts" index="3"/>
+            <configuration name="tensionBelts" index="6"/>
         </configurationSet>
         <configurationSet name="6m">
             <configuration name="design" index="7"/>
-            <configuration name="tensionBelts" index="3"/>
+            <configuration name="tensionBelts" index="7"/>
         </configurationSet>
     </configurationSets>
 
@@ -357,8 +357,8 @@
 
     <tensionBelts>
         <tensionBeltsConfigurations>
-            <tensionBeltsConfiguration name="Short Bed">
-                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
+            <tensionBeltsConfiguration name="3m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
                     <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
                         <intersectionNode node="tensionBelt0Intersection1"/>
                         <intersectionNode node="tensionBelt0Intersection2"/>
@@ -366,70 +366,206 @@
                     <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
                         <intersectionNode node="tensionBelt1Intersection1"/>
                         <intersectionNode node="tensionBelt1Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
-                        <intersectionNode node="tensionBelt-1Intersection1"/>
-                        <intersectionNode node="tensionBelt-1Intersection2"/>
-                    </tensionBelt>
-				</tensionBelts>
-            </tensionBeltsConfiguration>
-
-            <tensionBeltsConfiguration name="Medium Bed">
-                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
-                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
-                        <intersectionNode node="tensionBelt0Intersection1"/>
-                        <intersectionNode node="tensionBelt0Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
-                        <intersectionNode node="tensionBelt1Intersection1"/>
-                        <intersectionNode node="tensionBelt1Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
-                        <intersectionNode node="tensionBelt-1Intersection1"/>
-                        <intersectionNode node="tensionBelt-1Intersection2"/>
                     </tensionBelt>
                     <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
                         <intersectionNode node="tensionBelt2Intersection1"/>
                         <intersectionNode node="tensionBelt2Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-2Start" endNode="tensionBelt-2End" >
-                        <intersectionNode node="tensionBelt-2Intersection1"/>
-                        <intersectionNode node="tensionBelt-2Intersection2"/>
-                    </tensionBelt>
-				</tensionBelts>
-            </tensionBeltsConfiguration>
-
-            <tensionBeltsConfiguration name="Long Bed">
-                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0" defaultOffsetSide="0.1" defaultHeight="4" activationTrigger="beltActivationTrigger">
-                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
-                        <intersectionNode node="tensionBelt0Intersection1"/>
-                        <intersectionNode node="tensionBelt0Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
-                        <intersectionNode node="tensionBelt1Intersection1"/>
-                        <intersectionNode node="tensionBelt1Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-1Start" endNode="tensionBelt-1End" >
-                        <intersectionNode node="tensionBelt-1Intersection1"/>
-                        <intersectionNode node="tensionBelt-1Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
-                        <intersectionNode node="tensionBelt2Intersection1"/>
-                        <intersectionNode node="tensionBelt2Intersection2"/>
-                    </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-2Start" endNode="tensionBelt-2End" >
-                        <intersectionNode node="tensionBelt-2Intersection1"/>
-                        <intersectionNode node="tensionBelt-2Intersection2"/>
                     </tensionBelt>
                     <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
                         <intersectionNode node="tensionBelt3Intersection1"/>
                         <intersectionNode node="tensionBelt3Intersection2"/>
                     </tensionBelt>
-                    <tensionBelt startNode="tensionBelt-3Start" endNode="tensionBelt-3End" >
-                        <intersectionNode node="tensionBelt-3Intersection1"/>
-                        <intersectionNode node="tensionBelt-3Intersection2"/>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="3.5m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End">
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
                     </tensionBelt>
 				</tensionBelts>
+
+                <objectChange node="tensionBelts" translationActive="0 0.19 0.25"/>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="4m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End" >
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="4.5m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End" >
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt5Start" endNode="tensionBelt5End" >
+                        <intersectionNode node="tensionBelt5Intersection1"/>
+                        <intersectionNode node="tensionBelt5Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+                
+                <objectChange node="tensionBelts" translationActive="0 0.19 0.1"/>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="5m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End" >
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt5Start" endNode="tensionBelt5End" >
+                        <intersectionNode node="tensionBelt5Intersection1"/>
+                        <intersectionNode node="tensionBelt5Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt6Start" endNode="tensionBelt6End" >
+                        <intersectionNode node="tensionBelt6Intersection1"/>
+                        <intersectionNode node="tensionBelt6Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+                
+                <objectChange node="tensionBelts" translationActive="0 0.19 0.25"/>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="5.5m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End" >
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt5Start" endNode="tensionBelt5End" >
+                        <intersectionNode node="tensionBelt5Intersection1"/>
+                        <intersectionNode node="tensionBelt5Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt6Start" endNode="tensionBelt6End" >
+                        <intersectionNode node="tensionBelt6Intersection1"/>
+                        <intersectionNode node="tensionBelt6Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+            </tensionBeltsConfiguration>
+
+            <tensionBeltsConfiguration name="6m Bed">
+                <tensionBelts linkNode="tensionBelts" jointNode="mainComponent" activationTrigger="beltActivationTrigger" ratchetPosition="0.5">
+                    <tensionBelt startNode="tensionBelt0Start" endNode="tensionBelt0End" >
+                        <intersectionNode node="tensionBelt0Intersection1"/>
+                        <intersectionNode node="tensionBelt0Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt1Start" endNode="tensionBelt1End" >
+                        <intersectionNode node="tensionBelt1Intersection1"/>
+                        <intersectionNode node="tensionBelt1Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt2Start" endNode="tensionBelt2End" >
+                        <intersectionNode node="tensionBelt2Intersection1"/>
+                        <intersectionNode node="tensionBelt2Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt3Start" endNode="tensionBelt3End" >
+                        <intersectionNode node="tensionBelt3Intersection1"/>
+                        <intersectionNode node="tensionBelt3Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt4Start" endNode="tensionBelt4End" >
+                        <intersectionNode node="tensionBelt4Intersection1"/>
+                        <intersectionNode node="tensionBelt4Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt5Start" endNode="tensionBelt5End" >
+                        <intersectionNode node="tensionBelt5Intersection1"/>
+                        <intersectionNode node="tensionBelt5Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt6Start" endNode="tensionBelt6End" >
+                        <intersectionNode node="tensionBelt6Intersection1"/>
+                        <intersectionNode node="tensionBelt6Intersection2"/>
+                    </tensionBelt>
+                    <tensionBelt startNode="tensionBelt7Start" endNode="tensionBelt7End" >
+                        <intersectionNode node="tensionBelt7Intersection1"/>
+                        <intersectionNode node="tensionBelt7Intersection2"/>
+                    </tensionBelt>
+				</tensionBelts>
+                
+                <objectChange node="tensionBelts" translationActive="0 0.19 0.1"/>
             </tensionBeltsConfiguration>
         </tensionBeltsConfigurations>
     </tensionBelts>
@@ -476,17 +612,7 @@
         <sharedLight linkNode="rearLightRightReverse" filename="$data/shared/assets/lights/lizard/rearLight22White.xml" />
     </lights>
 
-    <connectionHoses>
-        <!-- <target attacherJointIndices="1 2" type="hydraulicIn" node="hydraulic02_in"/>
-        <target attacherJointIndices="1 2" type="hydraulicOut" node="hydraulic02_out"/>
-        <target attacherJointIndices="1 2" type="hydraulicIn" node="hydraulic03_in"/>
-        <target attacherJointIndices="1 2" type="hydraulicOut" node="hydraulic03_out"/>
-        <target attacherJointIndices="1 2" type="electric" node="backElectric" socket="electric"/>
-        <target attacherJointIndices="1 2" type="airDoubleRed" node="airDoubleStorage"/>
-        <target attacherJointIndices="1 2" type="airDoubleYellow" node="airDoubleControl"/> -->
-
-        
-        <target type="electric" socket="electric" node="electricConnection" attacherJointIndices="1 2"/>
+    <connectionHoses><target type="electric" socket="electric" node="electricConnection" attacherJointIndices="1 2"/>
         <target type="hydraulicIn" socket="hydraulic02" node="hydraulic1Connection" socketColor="0 0 1" attacherJointIndices="1 2"/>
         <!-- <target type="hydraulicOut" socket="hydraulic02" node="hydraulic2Connection" attacherJointIndices="1 2"/>
         <target type="hydraulicIn" socket="hydraulic02" node="hydraulic3Connection" attacherJointIndices="1 2"/>
@@ -576,49 +702,46 @@
         <i3dMapping id="air1Connection" node="0>1|5|3|5"/>
         <i3dMapping id="air2Connection" node="0>1|5|3|6"/>
         <i3dMapping id="bedMiddle_1m" node="0>2|0"/>
-        <i3dMapping id="col_bedMiddle_1m" node="0>2|0|1"/>
         <i3dMapping id="bedMiddle_1.5m" node="0>2|1"/>
-        <i3dMapping id="col_bedMiddle_1.5m" node="0>2|1|1"/>
         <i3dMapping id="bedMiddle_2m" node="0>2|2"/>
-        <i3dMapping id="col_bedMiddle_2m" node="0>2|2|1"/>
         <i3dMapping id="bedMiddle_2.5m" node="0>2|3"/>
-        <i3dMapping id="col_bedMiddle_2.5m" node="0>2|3|1"/>
         <i3dMapping id="bedMiddle_3m" node="0>2|4"/>
-        <i3dMapping id="col_bedMiddle_3m" node="0>2|4|1"/>
         <i3dMapping id="bedMiddle_3.5m" node="0>2|5"/>
-        <i3dMapping id="col_bedMiddle_3.5m" node="0>2|5|1"/>
         <i3dMapping id="bedMiddle_4m" node="0>2|6"/>
-        <i3dMapping id="col_bedMiddle_4m" node="0>2|6|1"/>
-        <i3dMapping id="tensionBelts" node="0>3"/>
-        <i3dMapping id="beltActivationTrigger" node="0>3|0"/>
-        <i3dMapping id="tensionBelt0Start" node="0>3|1"/>
-        <i3dMapping id="tensionBelt0Intersection1" node="0>3|1|0"/>
-        <i3dMapping id="tensionBelt0Intersection2" node="0>3|1|1"/>
-        <i3dMapping id="tensionBelt0End" node="0>3|1|2"/>
-        <i3dMapping id="tensionBelt1Start" node="0>3|2"/>
-        <i3dMapping id="tensionBelt1Intersection1" node="0>3|2|0"/>
-        <i3dMapping id="tensionBelt1Intersection2" node="0>3|2|1"/>
-        <i3dMapping id="tensionBelt1End" node="0>3|2|2"/>
-        <i3dMapping id="tensionBelt-1Start" node="0>3|3"/>
-        <i3dMapping id="tensionBelt-1Intersection1" node="0>3|3|0"/>
-        <i3dMapping id="tensionBelt-1Intersection2" node="0>3|3|1"/>
-        <i3dMapping id="tensionBelt-1End" node="0>3|3|2"/>
-        <i3dMapping id="tensionBelt2Start" node="0>3|4"/>
-        <i3dMapping id="tensionBelt2Intersection1" node="0>3|4|0"/>
-        <i3dMapping id="tensionBelt2Intersection2" node="0>3|4|1"/>
-        <i3dMapping id="tensionBelt2End" node="0>3|4|2"/>
-        <i3dMapping id="tensionBelt-2Start" node="0>3|5"/>
-        <i3dMapping id="tensionBelt-2Intersection1" node="0>3|5|0"/>
-        <i3dMapping id="tensionBelt-2Intersection2" node="0>3|5|1"/>
-        <i3dMapping id="tensionBelt-2End" node="0>3|5|2"/>
-        <i3dMapping id="tensionBelt3Start" node="0>3|6"/>
-        <i3dMapping id="tensionBelt3Intersection1" node="0>3|6|0"/>
-        <i3dMapping id="tensionBelt3Intersection2" node="0>3|6|1"/>
-        <i3dMapping id="tensionBelt3End" node="0>3|6|2"/>
-        <i3dMapping id="tensionBelt-3Start" node="0>3|7"/>
-        <i3dMapping id="tensionBelt-3Intersection1" node="0>3|7|0"/>
-        <i3dMapping id="tensionBelt-3Intersection2" node="0>3|7|1"/>
-        <i3dMapping id="tensionBelt-3End" node="0>3|7|2"/>
+        <i3dMapping id="tensionBelts" node="0>0|5"/>
+        <i3dMapping id="beltActivationTrigger" node="0>0|5|0"/>
+        <i3dMapping id="tensionBelt0Start" node="0>0|5|1"/>
+        <i3dMapping id="tensionBelt0Intersection1" node="0>0|5|1|0"/>
+        <i3dMapping id="tensionBelt0Intersection2" node="0>0|5|1|1"/>
+        <i3dMapping id="tensionBelt0End" node="0>0|5|1|2"/>
+        <i3dMapping id="tensionBelt1Start" node="0>0|5|2"/>
+        <i3dMapping id="tensionBelt1Intersection1" node="0>0|5|2|0"/>
+        <i3dMapping id="tensionBelt1Intersection2" node="0>0|5|2|1"/>
+        <i3dMapping id="tensionBelt1End" node="0>0|5|2|2"/>
+        <i3dMapping id="tensionBelt2Start" node="0>0|5|3"/>
+        <i3dMapping id="tensionBelt2Intersection1" node="0>0|5|3|0"/>
+        <i3dMapping id="tensionBelt2Intersection2" node="0>0|5|3|1"/>
+        <i3dMapping id="tensionBelt2End" node="0>0|5|3|2"/>
+        <i3dMapping id="tensionBelt3Start" node="0>0|5|4"/>
+        <i3dMapping id="tensionBelt3Intersection1" node="0>0|5|4|0"/>
+        <i3dMapping id="tensionBelt3Intersection2" node="0>0|5|4|1"/>
+        <i3dMapping id="tensionBelt3End" node="0>0|5|4|2"/>
+        <i3dMapping id="tensionBelt4Start" node="0>0|5|5"/>
+        <i3dMapping id="tensionBelt4Intersection1" node="0>0|5|5|0"/>
+        <i3dMapping id="tensionBelt4Intersection2" node="0>0|5|5|1"/>
+        <i3dMapping id="tensionBelt4End" node="0>0|5|5|2"/>
+        <i3dMapping id="tensionBelt5Start" node="0>0|5|6"/>
+        <i3dMapping id="tensionBelt5Intersection1" node="0>0|5|6|0"/>
+        <i3dMapping id="tensionBelt5Intersection2" node="0>0|5|6|1"/>
+        <i3dMapping id="tensionBelt5End" node="0>0|5|6|2"/>
+        <i3dMapping id="tensionBelt6Start" node="0>0|5|7"/>
+        <i3dMapping id="tensionBelt6Intersection1" node="0>0|5|7|0"/>
+        <i3dMapping id="tensionBelt6Intersection2" node="0>0|5|7|1"/>
+        <i3dMapping id="tensionBelt6End" node="0>0|5|7|2"/>
+        <i3dMapping id="tensionBelt7Start" node="0>0|5|8"/>
+        <i3dMapping id="tensionBelt7Intersection1" node="0>0|5|8|0"/>
+        <i3dMapping id="tensionBelt7Intersection2" node="0>0|5|8|1"/>
+        <i3dMapping id="tensionBelt7End" node="0>0|5|8|2"/>
     </i3dMappings>		
 
 </vehicle>
